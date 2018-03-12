@@ -222,8 +222,8 @@
     \end{minipage} &
     {\itemizationRowStyle \@formatHoursLeft{#2}} &
     {\itemizationRowStyle \@formatHoursRight{#2}} &
-    {\itemizationRowStyle \currencysym #3} &
-    {\itemizationRowStyle \currencysym \calcamount{#2}{#3}}
+    {\itemizationRowStyle #3 \currencysym} &
+    {\itemizationRowStyle \calcamount{#2}{#3} \currencysym}
     \\
     \noalign{\medskip}
 }
@@ -236,8 +236,8 @@
     \end{minipage} &
     {\itemizationRowStyle \@formatHoursLeft{#2}} &
     {\itemizationRowStyle \@formatHoursRight{#2}} &
-    {\itemizationRowStyle \currencysym #3} &
-    {\itemizationRowStyle \currencysym \calcamount{#2}{#3}}
+    {\itemizationRowStyle #3 \currencysym} &
+    {\itemizationRowStyle \calcamount{#2}{#3} \currencysym}
     \\
     \noalign{\medskip}
 }
