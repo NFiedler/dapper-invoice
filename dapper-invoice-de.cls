@@ -1,6 +1,6 @@
 % dapper-invoice-de.cls -- a billable-hours invoice featuring style over substance in german
 
-\ProvidesClass{dapper-invoice}[2015/04/12]
+\ProvidesClass{dapper-invoice-de}[2015/04/12]
 \NeedsTeXFormat{LaTeX2e}
 \LoadClass[11pt]{article}
 
@@ -77,7 +77,7 @@
         bookmarksopen  = false,
         bookmarksdepth = 2,% to show sections and subsections
         pdfauthor      = {#1},
-        pdftitle       = {#2 --- Rechnung \##3 for #4},
+        pdftitle       = {#2 --- Rechnung \##3 für #4},
         pdfsubject     = {Rechnung \##3},
         pdfkeywords    = {Rechnung, #2, #4}
     }
@@ -89,7 +89,7 @@
 
 \sodef\invoiceSpacing{}{.15em}{.4em}{.4em}
 \newcommand*{\makeheader}[2]{
-    \begin{minipage}[t]{.6\linewidth} {\headerStyle #1} \end{minipage}
+    \begin{minipage}[t]{.55\linewidth} {\headerStyle #1} \end{minipage}
     \hfill
     \begin{tabular}[t]{@{} c @{}}
         {\headerStyle \invoiceSpacing{Rechnung} \##2} \\
@@ -133,7 +133,7 @@
     \setcounter{colskipcount}{5}
     \setlength\LTleft{0pt}
     \setlength\LTright{0pt}
-    \begin{longtable}{c @{\hspace{1.5em}} p{.6\textwidth} r @{} l r r}
+    \begin{longtable}{c @{\hspace{1.5em}} p{.5\textwidth} r @{} l r r}
     \hline
     \noalign{\smallskip}
     {\itemizationHeaderStyle Datum} &
@@ -217,13 +217,13 @@
 
 \newcommand{\lineitem}[4]{
     {\itemizationRowStyle #1} &
-    \begin{minipage}[t]{.6\textwidth}
-        \begin{itemize}[leftmargin=0pt, labelsep=1pt, itemsep=0pt] \itemizationRowStyle #4 \end{itemize}
+    \begin{minipage}[t]{.5\textwidth}
+        \begin{itemize}[leftmargin=0pt, label={}, itemsep=0pt] \itemizationRowStyle #4 \end{itemize}
     \end{minipage} &
     {\itemizationRowStyle \@formatHoursLeft{#2}} &
     {\itemizationRowStyle \@formatHoursRight{#2}} &
-    {\itemizationRowStyle \currencysym#3} &
-    {\itemizationRowStyle \currencysym\calcamount{#2}{#3}}
+    {\itemizationRowStyle \currencysym #3} &
+    {\itemizationRowStyle \currencysym \calcamount{#2}{#3}}
     \\
     \noalign{\medskip}
 }
@@ -232,12 +232,12 @@
     {\itemizationRowStyle #1} &
     {\itemizationRowStyle #4} &
     \begin{minipage}[t]{0.5\textwidth}
-        \begin{itemize}[leftmargin=0pt, labelsep=1pt, itemsep=0pt] \itemizationRowStyle #5 \end{itemize}
+        \begin{itemize}[leftmargin=0pt, label={}, itemsep=0pt] \itemizationRowStyle #5 \end{itemize}
     \end{minipage} &
     {\itemizationRowStyle \@formatHoursLeft{#2}} &
     {\itemizationRowStyle \@formatHoursRight{#2}} &
-    {\itemizationRowStyle \currencysym#3} &
-    {\itemizationRowStyle \currencysym\calcamount{#2}{#3}}
+    {\itemizationRowStyle \currencysym #3} &
+    {\itemizationRowStyle \currencysym \calcamount{#2}{#3}}
     \\
     \noalign{\medskip}
 }
