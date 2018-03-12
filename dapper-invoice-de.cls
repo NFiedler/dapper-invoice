@@ -40,6 +40,11 @@
 % For tables
 \RequirePackage{longtable}
 
+%date formatting
+\RequirePackage{datetime2}
+\DTMsetdatestyle{ddmmyyyy}
+\DTMsetup{datesep=.}
+
 % Caluclating due date
 \RequirePackage{datenumber}
 
@@ -84,16 +89,16 @@
 }
 
 \newcommand*{\twocolumnlayout}[2]{
-    \begin{tabular}[t]{@{} p{.5\linewidth} @{} p{.5\linewidth} @{}} #1 & #2 \end{tabular}
+    \begin{tabular}[t]{@{} p{.7\linewidth} @{} p{.3\linewidth} @{}} #1 & #2 \end{tabular}
 }
 
 \sodef\invoiceSpacing{}{.15em}{.4em}{.4em}
 \newcommand*{\makeheader}[2]{
     \begin{minipage}[t]{.55\linewidth} {\headerStyle #1} \end{minipage}
     \hfill
-    \begin{tabular}[t]{@{} c @{}}
-        {\headerStyle \invoiceSpacing{Rechnung} \##2} \\
-        {\color{subduedColor} \today}
+    \begin{tabular}[t]{@{} r @{}}
+        {\headerStyle \invoiceSpacing{Rechnung} \##2} \\\\
+        {\Large\color{subduedColor} \today}
     \end{tabular}
 
     \addvspace{8ex}
