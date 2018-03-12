@@ -2,7 +2,7 @@
 
 \ProvidesClass{dapper-invoice-de}[2015/04/12]
 \NeedsTeXFormat{LaTeX2e}
-\LoadClass[11pt]{article}
+\LoadClass[11pt,a4paper]{article}
 
 % For page number calculations
 \RequirePackage{ifthen}
